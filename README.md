@@ -1,11 +1,44 @@
-<div align="center">
+# Srijith A Bhandare — Portfolio
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+Personal portfolio website for Srijith A Bhandare, a Data Science student and developer. It showcases projects, technical skills, and achievements through a high-performance, cinematic React application.
 
-  <h1>Built with AI Studio</h2>
+## Technologies
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+- **Frontend:** React 19, TypeScript, Vite
+- **Styling:** Tailwind CSS v4
+- **Animation:** GSAP, Motion, Lenis (Smooth Scroll)
+- **Backend/Serving:** Express, Node.js (esbuild bundled)
+- **Deployment:** Google Cloud Run (Containerized)
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## Setup and Development
 
-</div>
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Run the development server (with hot reload):**
+   ```bash
+   npm run dev
+   ```
+   *The server will start on port 3000.*
+
+## Production Build
+
+1. **Create the optimized production build:**
+   ```bash
+   npm run build
+   ```
+   *This compiles the React application via Vite and bundles the Express server using esbuild.*
+
+2. **Start the production server:**
+   ```bash
+   npm run start
+   ```
+
+## Repository Structure
+
+- `/src/components`: UI components (React, Tailwind, GSAP)
+- `/src/assets`: Images and visual assets
+- `/server.ts`: Express application entry point
+- `/vite.config.ts`: Vite configuration

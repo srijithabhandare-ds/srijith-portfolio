@@ -1,0 +1,112 @@
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "League Gothic", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* SRIJITH//SYSTEM Brand Palette (Cinematic Miami) */
+  --color-brand-bg: #090909;
+  --color-brand-surface: #0f0f0f;
+  --color-brand-card: #090909;
+  --color-brand-elevated: #1a1a1a;
+  
+  --color-brand-text: #F4EFE8;
+  --color-brand-muted: #8C96A5;
+  
+  --color-brand-cyan: #4FB9B0;
+  --color-brand-amber: #F46B45;
+  --color-brand-pink: #D65D87;
+  --color-brand-coral: #FF5E74;
+  --color-brand-violet: #7656C9;
+  --color-brand-yellow: #FFCB69;
+  
+  --color-brand-cream: #EEE7DB;
+
+  --color-brand-border: rgba(244, 239, 232, 0.08);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-brand-bg);
+    color: var(--color-brand-text);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  /* Premium Mobile Touch Feedback */
+  @media (hover: none) and (pointer: coarse) {
+    button, 
+    a, 
+    [role="button"] {
+      transition: opacity 0.15s ease-out, transform 0.15s ease-out !important;
+    }
+    
+    button:active, 
+    a:active, 
+    [role="button"]:active {
+      opacity: 0.6 !important;
+      transform: scale(0.98) !important;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: rgba(244, 107, 69, 0.3);
+  color: var(--color-brand-text);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-surface);
+  border: 1px solid var(--color-brand-border);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-elevated);
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px var(--color-brand-text);
+  color: transparent;
+}
+.text-stroke-brand {
+  -webkit-text-stroke: 1px var(--color-brand-amber);
+  color: transparent;
+}
+
+@layer utilities {
+  .ease-cinematic {
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .ease-premium {
+    transition-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  
+  .clip-reveal-start {
+    clip-path: inset(100% 0 0 0);
+  }
+  .clip-reveal-end {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@theme {
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+.text-stroke-light {
+  -webkit-text-stroke: 1px rgba(244, 239, 232, 0.4);
+  color: transparent;
+}
